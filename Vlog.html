@@ -3,8 +3,31 @@
 <head>
     <meta charset="utf-8" />
     <title>Damjan Janakievski</title>
+    <script type="text/javascript">
+     
+      
+
+
+
+    </script>
+
+
+
+
+
     <style type="text/css">
+
+
+        img {
+            border: 3px solid white;
+            
+            position: center;
+        }
+
+
+
         a {
+            color: navajowhite;
             text-decoration: none;
         }
 
@@ -13,20 +36,175 @@
             a:hover {
                 text-decoration: dashed;
                 border: double;
+                background-color:red;
             }
+
+
+
+
+        body {
+            
+            padding: 30px;
+            background: white;
+        }
+
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+        }
+
+      
+
+
+
+        div.kopce {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkred;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 10px 2px 2px black;
+        }
+
+        div.kopce2 {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkred;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 10px 2px 2px black;
+        }
+
+        p {
+            text-align: justify;
+            font-size:large;
+        }
+
+        #comentar {
+            text-align: start;
+            height: 200px;
+            width: 1000px;
+            font-size: 14pt;
+        }
+        h2 {
+            text-decoration:underline;
+            text-align: center;
+            font-size: xxx-large;
+            color: navajowhite;
+            text-decoration: dashed;
+            text-shadow: 10px 2px 2px black;
+        }
+        div.kopce2:hover{
+                         transform:rotate(0.2deg);
+        }
+        div.kopce:hover{transform:rotate(0.2deg);}
+        
     </style>
 </head>
 <body>
-    <h1>
-        <a href="HtmlPage.html">HOME</a>
-        <a href="Vlog.html">CONTROVERSIAL    </a>
-        <a href="STUFF.html"> STUFF  </a>
-        <a href="GALLERY.html">GALLERY  </a>
-        <a href="ANKETA.html">POLL    </a>
-        <a href="KONTAKT.html">CONTACT  </a>
+    <div class="kopce2">
+        <h1>
+            <a href="HtmlPage.html">HOME</a>
+             <a href="Vlog.html">CONTROVERSIAL</a>
+              <a href="STUFF.html">STUFF</a>
+               <a href="../GALEJIJA2.html">GALLERY</a>
+                <a href="ANKETA.html">POLL</a>
+                 <a href="KONTAKT.html">CONTACT</a>
 
-    </h1>
+        </h1>
+    </div>
     <hr />
-    <p>egsgsegdrhterhs</p>
+    <div class="header">
+        <div class="kopce">
+            <h2>This Week's Topic</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="leftcolumn">
+
+            <div class="kopce">
+                <h2>Who Won The US Elections</h2>
+                <h5>Started: nov 18  2020</h5>
+                <img src="css/trumpvsbiden.jpg" height="400" width="500" />
+                <p>
+                    This Topic Is Vary Sensitive Beacause Choosing A Side Is Considered A Insult For The Other
+                    "Team" And You Should Be Prepered For The Demonization You Will Recivcive Is You so Choose To Pick A "Team"
+                    On One Hand The Truth is Indinaiable That Biden Won The Election But On The Other Milions Of People Are Choosing Not To
+                    Believe The Results Do To Loss-of-trust In Any Institution. Can You Blame Them Really... There Have Been So Many Instances Where
+                    The Institution Has Had A Negativ Impact On Our Life And Has LIed Or Taken Advantage Of Us. Is It Right To Blame Others For The Actions Of Few,
+                    How Do We Know Who To Trust, Why Do People Not Trust The (Elections Commity) But Trust The Trump Administration Which Is Also A Institution
+                    Maby We chouldn't Trust Any Institution. Or mayby No Trusting AnyThing Is gonna Be Bad For The people. In Any Case People Are Being Too Obsesed With
+                    ideas That We Should Not Obsses About. Or should we..
+                </p>
+                <br />
+            </div>
+            <hr />
+            <div class="kopce">
+                <label for="Data">Enter Date To Comment:<br /> </label>
+                <input type="date" id="Data">
+            </div>
+            <hr />
+            <div class="kopce">
+                <label for="comentar">Type Your Opinion:<br /> </label>
+
+                <textarea type="submit" rows="10" cols="25" placeholder="Be Nice.." spellcheck="true" id="comentar"></textarea>
+                <br />
+                <button onclick="Submit(), imeIpezime()">Comment:</button>
+                </div>
+                <hr />
+                <div class="kopce">
+                    <p><b>Comment Section:</b></p>
+                    <p id="ime"></p>
+                    <p id="data"></p>
+                    <p id="demo"></p>
+                    </div>
+
+                    <script>
+                        function Submit() {
+                            var y = document.getElementById("Data").value;
+                            document.getElementById("data").innerHTML = "Date: " + y;
+
+                   
+
+                            var x = document.getElementById("comentar").value;
+                            document.getElementById("demo").innerHTML = "Comment: " + x;
+
+
+
+
+                        }
+
+                        function imeIpezime() {
+                            var person = prompt("Enter Your Name And Surname: ", "");
+                            if (person != null) {
+                                document.getElementById("ime").innerHTML = person + ": ";
+
+                            }
+                        }
+
+
+                    </script>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+    
 </body>
 </html>

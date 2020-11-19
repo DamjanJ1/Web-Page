@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Damjan Janakievski</title>
+    <style type="text/css">
+        a {
+            color: navajowhite;
+            text-decoration: none;
+        }
+
+        div.background {
+            background-color: white;
+            background-repeat: repeat;
+        }
+
+        h1 {
+            color: navajowhite;
+        }
+
+        a:hover {
+            color: navajowhite;
+            text-decoration: dashed;
+            border: double;
+            background-color:red;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: xxx-large;
+            color: navajowhite;
+            text-decoration: dashed;
+            
+            text-shadow: 10px 2px 2px black;
+        }
+        
+        img {
+            text-align: center;
+            border: 3px solid white;
+            
+            position: center;
+            width: 540px;
+            height: 540px;
+        }
+        
+        #custome-button {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkorange;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 10px 2px 2px black;
+        }
+        #custome-button:hover {
+            background-color:orange;
+            transform: scale(1.05);
+        }
+        h3 {text-align:center;}
+        h4 {text-align:center;}
+        p {text-align:center;
+           color:navajowhite;
+
+        }
+       
+        h5{text-align:center;}
+        div.kopce {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkred;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 10px 2px 2px black;
+        }
+        b {
+            text-align: center;
+            font-size: xxx-large;
+            color: darkred;
+        }
+            
+
+       body {
+            padding: 30px;
+            background: white;
+        }
+        }
+        b:hover{color:red;
+                
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        div.kopce2 {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkred;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 10px 2px 2px black;
+        }
+        i{font-size:larger;}
+
+
+        div.kopce2:hover {
+            transform: rotate(0.2deg);
+        }
+
+        div.kopce:hover {
+            transform: rotate(0.2deg);
+        }
+        
+
+
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+        }
+
+    </style>
+
+</head>
+<body">
+    <div class="background">
+        <div class="kopce2">
+            <h1>
+                <a href="HtmlPage.html">HOME</a>
+                <a href="Vlog.html">CONTROVERSIAL    </a>
+                <a href="STUFF.html"> STUFF  </a>
+                <a href="../GALEJIJA2.html">GALLERY</a>
+                <a href="ANKETA.html">POLL    </a>
+                <a href="KONTAKT.html">CONTACT  </a>
+
+            </h1>
+        </div>
+        <hr />
+        <div class="header">
+            <div class="kopce">
+                <h2>Upload Your Best Photo</h2>
+                <p><i>(Feel Free To Leave A Like Down Below)</i></p>
+                <br />
+            </div>
+        </div>
+        <hr />
+        <div class="kopce">
+            <h4><button type="button" id="custome-button">Upload Photo</button></h4>
+            <h3>
+
+                <input type="file" id="myFileInput" hidden="hidden">
+
+                <img src="" alt="Preview" id="imgPreview" />
+
+
+
+                <script type="text/javascript">
+                    const Realbt = document.getElementById("myFileInput");
+                    const Fakebt = document.getElementById("custome-button");
+
+                    Fakebt.addEventListener("click", function () {
+                        Realbt.click();
+                    });
+
+
+
+                </script>
+
+        </div>
+        <script>
+
+            document.querySelector("#myFileInput").addEventListener("change", function () {
+                const reader = new FileReader();
+
+                reader.addEventListener("load", () => {
+                    localStorage.setItem("recent-image", reader.result);
+                });
+
+                reader.readAsDataURL(this.files[0]);
+
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const recentImageDataUrl = localStorage.getItem("recent-image");
+
+                if (recentImageDataUrl) {
+                    document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl);
+
+                }
+            });
+
+
+        </script>
+
+
+    </div>
+                </h3>
+
+                <script>
+                    function clickCounter() {
+                        if (typeof (Storage) !== "undefined") {
+                            if (localStorage.clickcount) {
+                                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                            } else {
+                                localStorage.clickcount = 1;
+                            }
+                            document.getElementById("result").innerHTML = "Likes: " + localStorage.clickcount + ".";
+                        } else {
+                            document.getElementById("result").innerHTML = "Nema web storage";
+                        }
+                    }
+                </script>
+
+                <h5>
+                    <div class="kopce">
+                        <button onclick="clickCounter()" type="button" id=""><b>Like If You Enjoyed The Photo</b></button>
+
+                        <div id="result"></div> <br />
+                    </div>
+
+                </h5>
+
+
+
+
+
+
+
+                </body>
+</html>>
