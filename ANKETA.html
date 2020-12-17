@@ -4,71 +4,285 @@
     <meta charset="utf-8" />
     <title>Damjan Janakievski</title>
     <style type="text/css">
-        a {
+      
+          
+
+            a {
+            color: navajowhite;
             text-decoration: none;
-            color:darkred;
         }
+
+
+        body {
+            
+            padding: 30px;
+            background: white;
+        }
+
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+        }
+
+
             a:hover {
                 text-decoration: dashed;
                 border: double;
+                background-color:red;
             }
+
+            div.kopce {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkred;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 10px 2px 2px black;
+        }
+
+
+        #custome-button {
+            align-items:middle;
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkorange;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 10px 2px 2px black;
+        }
+        #custome-button:hover {
+            background-color:orange;
+            transform: scale(1.05);
+        }
+
+
+
+        div.kopce2 {
+            padding: 10px;
+            color: navajowhite;
+            background-color: darkblue;
+            border: 1px solid #000;
+            border-radius: 5xp;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 10px 2px 2px black;
+        }
+
+
+        p {
+            text-align: justify;
+            font-size:large;
+           
+        }
+  h5 { text-align: center;
+  font-size: xx-large;
+  border: oldlace;}
+
+        #button {background-color: navajowhite;
+                size: Large;
+                height: 400px;
+                width: 400px;
+                border-radius: 400px;
+                font-size: xxx-large;
+                color:darkred;
+                text-align: center;
+                text-shadow: 5px 1px 1px black;
+                font-style: oblique;
+
+            }
+            #button:hover {
+                transform: scale(0.9) ;
+                transform:rotate(5);
+            }
+
+            div.kopce2:hover{
+                         transform:rotate(0.2deg);
+        }
+        div.kopce:hover{transform:rotate(0.2deg);}
+
+        .slidecontainer {
+  width: 100%; 
+}
+
+
+.slider {
+  -webkit-appearance: none;  
+  appearance: none;
+  width: 100%; 
+  height: 25px;
+  background:navajowhite; 
+  outline: none;
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
+  transition: opacity .2s;
+}
+
+
+.slider:hover {
+  opacity: 1; 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 25px; 
+  height: 25px; 
+  background:darkred; 
+  cursor: pointer; 
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px; 
+  background:navajowhite; 
+  cursor: pointer; 
+}
+
+
+h2 { font-size: small;
+text-shadow: none;}
+
+
+
     </style>
 </head>
 <body>
+    <div class="kopce2">
     <h1>
         <a href="HtmlPage.html">HOME</a>
         <a href="Vlog.html">CONTROVERSIAL   </a>
         <a href="STUFF.html"> STUFF  </a>
 
-        <a href="GALEJIJA2.html">GALEJIJA2.html</a>
+        <a href="GALEJIJA2.html">GALLERY</a>
         <a href="ANKETA.html">POLL    </a>
         <a href="KONTAKT.html">CONTACT  </a>
 
     </h1>
+</div>
     <hr />
-    <h1>I Would Like To Here Feedback From You :D</h1>
+    <div class="kopce">
+    
+<br>
+    <button  onclick="imeIpezime()" id="button"> Would You Like To Give Us A Review <h2>(click here)</h2></button>
+
+
+
+
+</div>
+<hr>
+<div class="kopce2">
+<h1>Information You Entered</h1>
+<p id="ime">Name and Surname: _______</p>
+<p id="age">Age: _______</p>
+<p id="Email">Email: _______</p>
+
+</div>
+<hr>
+<br>
+    <script>
+    function imeIpezime() {
+        var person=prompt("Enter Your Name and Surname: ", "");
+        if (person != null) {
+            document.getElementById("ime").innerHTML = "Name and Surname: " + person;
+
+        }
+        var Age = prompt("Enter Your Age: ", "0");
+        if (Age != null){
+            document.getElementById("age").innerHTML = "Age: " + Age;
+        }
+
+        var Email = prompt("Enter Your Email: ", "example@gamil.com");
+        if (Email != null){
+            document.getElementById("Email").innerHTML = "Email: " + Email;
+        }
+      
+    }
+
+    </script>
+
+
+
+
+
+
+<div class="kopce2">
     <input type="hidden" name=" primatel" value="damjan_jan@yahoo.com" />
     <input type="hidden" name="klient" value=" feedback from" />
     <input type="hidden" name="redirect" value="HtmlPage.html" />
-    <p>
-        <label>
-            Name:
-            <input name="name" type="text" size="30" maxlenght="30" autocomplete="on" />
-
-        </label>
-
-    </p>
+  
     <p>
         <Lable>
-            Who Would You Vote For In 2020:
+           <p>Who Would You Vote For In 2020: </p> <br>
             <input type="checkbox" id="TRUMP" value="DONALD J.TRUMP" />
-            <label for="TRUMP">DONALD J. TRUMP</label>
+            <label for="TRUMP">DONALD J. TRUMP</label><br>
             <input type="checkbox" id=" Biden" value=" Biden" />
             <label for="Biden">Biden</label>
         </Lable>
+        
     </p>
-    <p>
-        <Lable>
-            Age:
-            <input name="Age" type="number" size="30" maxlength="3" />
-        </Lable>
-    </p>
-    <p>
-        <Lable>
-            Email:
-            <input name="Email" type="email" size="30" maxlength="30" autocomplete="on" />
-        </Lable>
-    </p>
-    <p>
-        <Lable>
-            Rate This Site:
-            <input name="Email" type="range" size="100" maxlength="100" minlenght="0" />
-        </Lable>
-    </p>
-    <p>
+   
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <h5>Rateing: <span id="demo"></span></h5>
 
-        <input type="submit" value="Submit" />
-        <input type="reset" value="Clear" />
-    </p>
+
+        <button hidden="hidden" type="button">submit</button>
+        <button type="button"  id="custome-button" onclick="save(), viewdata()">Submit Rating</button>
+         
+         <h4>Other People Rateing:</h4>
+         <hr>
+         <p id="output"></p>
+      </div>
+      
+
+
+      <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+      
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+
+      function save(){
+            var new_data = document.getElementById('myRange').value;
+
+            if(localStorage.getItem('data1') == null){
+                localStorage.setItem('data1', '[]');
+                }
+         
+                    
+            var old_data = JSON.parse(localStorage.getItem('data1'));
+         old_data.push(new_data);
+
+                        
+         localStorage.setItem('data1', JSON.stringify(old_data));
+
+
+            }
+           
+
+         function viewdata(){
+         if(localStorage.getItem('data1') != null){
+         document.getElementById('output').innerHTML =JSON.parse(localStorage.getItem('data1'));
+            }
+    }
+
+      </script>
+
+
+</div>
+
+
+
 </body>
 </html>
